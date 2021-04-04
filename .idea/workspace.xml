@@ -1,28 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="c2b08365-7f8e-4cb0-8b99-8cc957969b3c" name="Default Changelist" comment="" />
+    <list default="true" id="7b9dd712-80e3-4f74-bc89-0917a64235be" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="FileTemplateManagerImpl">
-    <option name="RECENT_TEMPLATES">
-      <list>
-        <option value="Class" />
-      </list>
-    </option>
-  </component>
-  <component name="MavenImportPreferences">
-    <option name="importingSettings">
-      <MavenImportingSettings>
-        <option name="importAutomatically" value="true" />
-      </MavenImportingSettings>
-    </option>
-  </component>
-  <component name="ProjectId" id="1q44ts7sTdeqEMqvzxecVG2vybl" />
+  <component name="ProjectId" id="1pzTEwG7pehU5KIy8ht4qoAzIG6" />
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
@@ -40,16 +26,16 @@
     </option>
   </component>
   <component name="RunManager">
-    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Main" />
-      <module name="WeatherBot" />
+    <configuration name="Bot" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Bot" />
+      <module name="Bot" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Main" />
+        <item itemvalue="Application.Bot" />
       </list>
     </recent_temporary>
   </component>
@@ -58,12 +44,14 @@
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="c2b08365-7f8e-4cb0-8b99-8cc957969b3c" name="Default Changelist" comment="" />
-      <created>1616325746007</created>
+      <changelist id="7b9dd712-80e3-4f74-bc89-0917a64235be" name="Default Changelist" comment="" />
+      <created>1616184810348</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1616325746007</updated>
-      <workItem from="1616325749789" duration="8723000" />
+      <updated>1616184810348</updated>
+      <workItem from="1616184813421" duration="2281000" />
+      <workItem from="1616241517763" duration="4092000" />
+      <workItem from="1616281774802" duration="28000" />
     </task>
     <servers />
   </component>
