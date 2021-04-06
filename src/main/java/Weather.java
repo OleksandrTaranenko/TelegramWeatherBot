@@ -1,16 +1,29 @@
 import org.json.JSONArray;
 import org.json.JSONObject;
 
-import java.io.IOException;
-import java.io.InputStream;
-import java.net.MalformedURLException;
+import java.io.*;
 import java.net.URL;
+import java.util.Properties;
 import java.util.Scanner;
 
 public class Weather {
+    private static String token;
+    private static String urlOpenWeather;
 
-    public static String getWeather(String message, Model model) throws IOException {
-        URL url = new URL("http://api.openweathermap.org/data/2.5/weather?q=" + message + "&units=metric&appid=6fff53a641b9b9a799cfd6b079f5cd4e");
+    public static Model getWeather(String message) throws IOException {
+        Properties props = new Properties();
+        File propFile = new File("src/main/resources/myapp.properties");
+
+        try(Reader reader = new FileReader(propFile)) {
+            props.load(reader);
+            token = props.getProperty("token.openweathermap");
+            urlOpenWeather = props.getProperty("url.openweather");
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        URL url = new URL(urlOpenWeather+"/data/2.5/weather?q=" + message + "&units=metric&appid=" + token);
 
         Scanner in = new Scanner((InputStream) url.getContent());
         String result = "";
@@ -18,11 +31,15 @@ public class Weather {
             result += in.nextLine();
         }
 
+        Model model = new Model();
+
         JSONObject object = new JSONObject(result);
         model.setName(object.getString("name"));
+        model.setCountry(object.getJSONObject("sys").getString("country"));
+        model.setWind(object.getJSONObject("wind").getDouble("speed"));
 
         JSONObject main = object.getJSONObject("main");
-        model.setTemp(main.getDouble("temp"));
+        model.setTemperature(main.getDouble("temp"));
         model.setHumidity(main.getDouble("humidity"));
 
         JSONArray getArray = object.getJSONArray("weather");
@@ -31,11 +48,6 @@ public class Weather {
             model.setIcon((String) obj.get("icon"));
             model.setMain((String) obj.get("main"));
         }
-
-        return "City: " + model.getName() + "\n" +
-                "Temperature: " + model.getTemp() + "C" + "\n" +
-                "Humidity:" + model.getHumidity() + "%" + "\n" +
-                "Main: " + model.getMain() + "\n" +
-                "http://openweathermap.org/img/w/" + model.getIcon() + ".png";
+        return model;
     }
 }
